@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PortalAR | Propuesta Económica – Galería en Realidad Aumentada</title>
+    <title>PortalAR | Propuesta Económica – Portal AR inmersivo (Unity + AR Foundation)</title>
     
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -491,6 +491,28 @@
         .tag-purple { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
         .tag-green { background: rgba(16,185,129,0.18); color: #6ee7b7; }
 
+        /* Listas de requerimientos */
+        .requirements-list {
+            list-style: none;
+            padding-left: 0;
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            display: grid;
+            gap: 6px;
+        }
+
+        .requirements-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .requirements-list li i {
+            font-size: 0.9rem;
+            margin-top: 2px;
+            color: var(--accent-glow);
+        }
+
         /* Highlight box (resumen ejecutivo) */
         .highlight-box {
             background: rgba(15,23,42,0.78);
@@ -621,17 +643,24 @@
                 Propuesta Económica – Portal<span class="gradient-text">AR</span>
             </h1>
             <p class="subtitle">
-                Desarrollo e implementación de <strong>PortalAR</strong>, una experiencia de galería en realidad aumentada
-                para presentar proyectos universitarios mediante un portal AR y un cuarto virtual interactivo.
+                Desarrollo e implementación de <strong>PortalAR</strong>, una experiencia de portal en realidad aumentada,
+                desarrollada con <strong>Unity</strong> y <strong>AR Foundation</strong> (ARKit en iOS, ARCore en Android), que permite al
+                usuario ver el mundo real a través de la cámara, encontrar un portal anclado en el salón y
+                atravesarlo para entrar a un mundo virtual a escala <strong>1:1</strong>, pudiendo volver al mundo real
+                cuando lo desee.
             </p>
             <p class="subtitle-note">
                 Cifras expresadas en dólares estadounidenses (USD). Los montos son referenciales y pueden ajustarse
-                según el alcance final y el esquema de facturación acordado.
+                según el alcance final, las plataformas objetivo y el esquema de facturación acordado.
             </p>
 
             <nav class="section-nav" aria-label="Navegación de secciones">
                 <span class="section-nav-label">Secciones</span>
                 <a href="#resumen">Resumen ejecutivo</a>
+                <a href="#alcance">Alcance &amp; MVP</a>
+                <a href="#rf">Funcionales</a>
+                <a href="#rd">Dominio</a>
+                <a href="#rnf">No funcionales</a>
                 <a href="#esfuerzo">Esfuerzo estimado</a>
                 <a href="#equipo">Costos de equipo</a>
                 <a href="#competencia">Comparación</a>
@@ -654,16 +683,18 @@
                     </div>
                     <p style="color: var(--text-muted); margin-bottom: 12px;">
                         La propuesta cubre el diseño, desarrollo e implementación de <strong>PortalAR</strong>, una
-                        aplicación iOS que utiliza <strong>ARKit</strong> y <strong>RealityKit</strong> para crear un portal de
-                        realidad aumentada que lleva a los usuarios a una sala virtual donde se muestran proyectos
-                        universitarios en forma de imágenes o videos.
+                        aplicación móvil basada en <strong>Unity + AR Foundation</strong> (ARKit / ARCore) que crea un portal
+                        de realidad aumentada anclado en el entorno físico. El usuario puede atravesar este portal,
+                        cambiar entre un estado “fuera” (mundo real) y un estado “dentro” (mundo virtual) y moverse
+                        libremente en un espacio 3D a escala real <strong>1:1</strong>, siguiendo los requerimientos
+                        funcionales, de dominio y no funcionales definidos para el MVP.
                     </p>
                     <p style="color: var(--text-muted); margin-bottom: 12px;">
                         El esfuerzo estimado es de <strong>808 h</strong>, equivalentes a <strong>101 jornadas de 8 h</strong>. La inversión
-                        por mano de obra se estima en <strong>22,800 USD</strong>. Los costos con terceros para el primer año
-                        de operación se descomponen en aproximadamente <strong>231 USD/año</strong> de costos recurrentes
-                        (hosting, dominio, SSL y cuenta de desarrollador Apple), para un subtotal de
-                        <strong>23,031 USD</strong> sin impuestos.
+                        por mano de obra se estima en <strong>22,800 USD</strong>. Este esfuerzo cubre la detección y
+                        colocación del portal, la interacción bidireccional (entrar/salir), la navegación segura,
+                        el manejo de tracking y oclusiones, la UI mínima, la telemetría básica y la gestión de
+                        errores y estados, conforme a los requerimientos <strong>RF</strong>, <strong>RD</strong> y <strong>RNF</strong> definidos.
                     </p>
                     <p style="color: var(--text-muted); margin-bottom: 24px;">
                         Asumiendo facturación en Guatemala y la aplicación del IVA general del <strong>12%</strong>, el total
@@ -671,6 +702,10 @@
                     </p>
 
                     <div class="highlight-box">
+                        <div class="highlight-row">
+                            <span>Plataformas y stack principal</span>
+                            <span>Unity + AR Foundation · iOS (ARKit) · Android (ARCore)</span>
+                        </div>
                         <div class="highlight-row">
                             <span>Mano de obra</span>
                             <span>22,800 USD</span>
@@ -732,7 +767,9 @@
                         <span class="price-tag tag-blue">Esfuerzo estimado</span>
                     </div>
                     <p style="color: var(--text-muted); margin-bottom: 10px;">
-                        Distribución de horas por tipo de actividad para el desarrollo de PortalAR.
+                        Distribución de horas por tipo de actividad para el desarrollo de <strong>PortalAR</strong>, incluyendo
+                        análisis y diseño de experiencia AR, definición de requerimientos (RF, RD, RNF), desarrollo en
+                        Unity, pruebas en dispositivos iOS y Android compatibles y soporte inicial.
                     </p>
                     <div class="table-wrapper">
                         <table class="data-grid">
@@ -756,27 +793,27 @@
                                 </tr>
                                 <tr>
                                     <td>Análisis</td>
-                                    <td>Requerimientos y diseño de experiencia AR</td>
+                                    <td>Requerimientos y diseño de experiencia AR (portal, mundo virtual, seguridad)</td>
                                     <td>24 h</td>
                                 </tr>
                                 <tr>
                                     <td>Documentación</td>
-                                    <td>Guías, manuales y especificaciones</td>
+                                    <td>Guías, manuales y especificaciones (RF, RD, RNF, CA)</td>
                                     <td>40 h</td>
                                 </tr>
                                 <tr>
                                     <td>Desarrollo</td>
-                                    <td>Implementación de PortalAR (iOS)</td>
+                                    <td>Implementación de PortalAR (Unity · iOS + Android)</td>
                                     <td>480 h</td>
                                 </tr>
                                 <tr>
                                     <td>Pruebas y QA</td>
-                                    <td>Testing funcional, AR y experiencia de usuario</td>
+                                    <td>Testing funcional, AR, rendimiento y experiencia de usuario</td>
                                     <td>144 h</td>
                                 </tr>
                                 <tr>
                                     <td>Implementación</td>
-                                    <td>Despliegue, publicación y ajustes finales</td>
+                                    <td>Despliegue, publicación en stores y ajustes finales</td>
                                     <td>48 h</td>
                                 </tr>
                                 <tr>
@@ -798,6 +835,166 @@
                 </div>
             </article>
 
+            <!-- ALCANCE GENERAL (MVP) -->
+            <article class="card col-12 fade-up delay-1" id="alcance">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="ri-compasses-2-line"></i> Alcance del MVP</h2>
+                        <span class="price-tag tag-green">Escenario base</span>
+                    </div>
+                    <ul class="requirements-list">
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Escenario en interiores: salón con buena iluminación y superficies planas donde se coloca un único portal AR.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>El usuario ve su entorno a través de la cámara, localiza el portal y lo atraviesa para entrar a un showroom virtual a escala <strong>1:1</strong>.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>El showroom está formado por paredes y puerta en 3D, con contenido audiovisual (pantallas de vídeo) en el interior.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Flujo principal: detectar plano, mostrar indicador de posición, tap para colocar el portal, entrar y salir libremente del mundo virtual.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Prototipo técnico de referencia: proyecto iOS <strong>ARKitPortal</strong> (AppDelegate.swift, ViewController.swift, SceneKit/ARKit, storyboard con <code>ARSCNView</code>, assets .scn, texturas, vídeos y AppIcon).</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>La versión final se implementará en <strong>Unity + AR Foundation</strong>, replicando el comportamiento validado en el prototipo ARKit.</span>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- FUNCIONALES (RF) -->
+            <article class="card col-4 fade-up delay-2" id="rf">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="ri-toggle-line"></i> Requerimientos funcionales (RF)</h2>
+                        <span class="price-tag tag-blue">Qué hace la app</span>
+                    </div>
+                    <ul class="requirements-list">
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>App móvil con vista AR principal (<code>ARSCNView</code> / equivalente Unity) y sesión de <strong>ARWorldTracking</strong>.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Detección de planos horizontales y estimados; indicador circular (torus) en el centro de pantalla donde se puede colocar el showroom.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Colocación de un único showroom/portal mediante tap, ligeramente elevado sobre el plano y auto-orientado hacia la cámara.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Construcción del portal a partir de “cajas” (SCNBox / meshes en Unity) para paredes, techo, piso y jambas de la puerta, con materiales tipo pared.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Iluminación puntual interior (spotlight) con sombras suaves, apuntando al suelo del showroom para dar volumen y profundidad.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Integración de pantallas de vídeo en la pared de fondo y laterales (p. ej. <code>juandiproyecto.mp4</code>, <code>gianproyecto.mp4</code>, <code>IMG_4592.mp4</code>) con reproducción en loop automático.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Actualización continua de visibilidad de las pantallas de vídeo según la posición del usuario: solo se muestran cuando está dentro del showroom o muy cerca de la puerta.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Visualización opcional de planos detectados (debug) y del origen del mundo para QA y demos técnicas.</span>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- DOMINIO (RD) -->
+            <article class="card col-4 fade-up delay-2" id="rd">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="ri-shield-check-line"></i> Requerimientos de dominio (RD)</h2>
+                        <span class="price-tag tag-purple">Contexto &amp; uso</span>
+                    </div>
+                    <ul class="requirements-list">
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Uso en interiores con área despejada recomendada de al menos <strong>3×3 m</strong> antes de cruzar el portal.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Experiencia diseñada para que el usuario permanezca de pie, en un espacio controlado (salón, aula, showroom) y no caminando por pasillos o escaleras.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Contenido audiovisual local en el dispositivo (vídeos MP4 incluidos en el bundle); el MVP no depende de streaming.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Procesamiento de cámara, nubes de puntos y geometría <strong>on-device</strong>; no se almacenan ni envían imágenes del entorno por defecto.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Telemetría básica de uso (entradas/salidas del showroom, duración de sesión) opcional y anónima, activable desde ajustes.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Prototipo actual sobre dispositivos compatibles con <strong>ARKit</strong> (iPhone/iPad); versión productiva prevista también para dispositivos <strong>ARCore</strong> vía Unity.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Público objetivo: usuarios de <strong>13+ años</strong>, con mensajes in-app de seguridad y uso responsable.</span>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- NO FUNCIONALES (RNF & CA) -->
+            <article class="card col-4 fade-up delay-2" id="rnf">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 class="card-title"><i class="ri-speed-up-line"></i> No funcionales &amp; CA (RNF · CA)</h2>
+                        <span class="price-tag tag-green">Calidad &amp; criterios</span>
+                    </div>
+                    <ul class="requirements-list">
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Rendimiento objetivo de <strong>≥30 FPS</strong> en dispositivos de referencia, idealmente 60 FPS en gama media-alta.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Tiempo de arranque hasta ver la experiencia AR principal ≤ <strong>5 s</strong> en condiciones normales.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Estabilidad del portal: deriva máxima del anclaje &lt; <strong>5 cm</strong> tras caminar un círculo de ~2 m alrededor.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Manejo de ciclo de vida de la app: la sesión AR se pausa al ir a background y se reanuda al volver (basado en <code>AppDelegate</code> y callbacks de <code>ARSession</code>).</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Arquitectura modular: <strong>AppDelegate</strong>, <strong>ViewController</strong>, helpers (p. ej. <code>createBox</code>, extensiones de ángulos) y recursos en carpetas específicas (storyboards, <code>art.scnassets</code>, vídeos, AppIcon).</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Tamaño objetivo del paquete móvil contenido (activos optimizados, compresión de vídeo y texturas) para facilitar descargas y actualizaciones.</span>
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-line"></i>
+                            <span>Criterios de aceptación: cruce del portal con transición &lt; 1 s, retorno fiable al mundo real, vídeos reproduciéndose sin cortes visibles y experiencia usable en iluminación media/baja.</span>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
             <!-- COSTOS DE EQUIPO -->
             <article class="card col-6 fade-up delay-1" id="equipo">
                 <div class="card-content">
@@ -807,7 +1004,8 @@
                     </div>
                     <p style="color: var(--text-muted); margin-bottom: 12px;">
                         Costos expresados en jornadas de 8 horas, equilibrando un Jefe de Proyecto con experiencia
-                        y un equipo de analistas/programadores especializados en iOS, ARKit y RealityKit.
+                        y un equipo de analistas/programadores especializados en <strong>Unity</strong>, <strong>AR Foundation</strong>,
+                        <strong>ARKit</strong> y <strong>ARCore</strong>, así como en diseño de experiencias inmersivas seguras.
                     </p>
                     <div class="table-wrapper">
                         <table class="data-grid">
@@ -866,7 +1064,8 @@
                     </div>
                     <p style="color: var(--text-muted); margin-bottom: 16px;">
                         Comparación referencial usando la tarifa horaria promedio en Estados Unidos para un
-                        ingeniero de software, aplicada a las mismas <strong>808 h</strong> estimadas para PortalAR.
+                        ingeniero de software, aplicada a las mismas <strong>808 h</strong> estimadas para PortalAR
+                        (experiencia AR inmersiva con portal y mundo virtual, multiplataforma móvil).
                     </p>
 
                     <div style="background: rgba(248,113,113,0.12); border: 1px solid rgba(248,113,113,0.4); padding: 20px; border-radius: var(--radius-sm); margin-bottom: 18px;">
@@ -901,12 +1100,13 @@
                 <div class="card-content">
                     <div class="card-header">
                         <h2 class="card-title"><i class="ri-server-line"></i> Costos adicionales (1er año de operación)</h2>
-                        <span class="price-tag tag-purple">Infraestructura & servicios</span>
+                        <span class="price-tag tag-purple">Infraestructura &amp; servicios</span>
                     </div>
                     
                     <p style="color: var(--text-muted); margin-bottom: 18px;">
                         Desglose de costos recurrentes asociados a la
-                        operación de PortalAR durante el primer año.
+                        operación de <strong>PortalAR</strong> durante el primer año, considerando la publicación en iOS
+                        y la posible presencia de servicios auxiliares para Android.
                     </p>
 
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
@@ -918,7 +1118,8 @@
                                 <li style="margin-bottom: 5px;">• Hosting app / API (cloud): <strong>120 USD/año</strong> (≈ 10 USD/mes en plan básico).</li>
                                 <li style="margin-bottom: 5px;">• Dominio .com: <strong>12 USD/año</strong>.</li>
                                 <li style="margin-bottom: 5px;">• Certificado SSL: <strong>0 USD/año</strong> (certificados gratuitos/incluidos).</li>
-                                <li>• Cuenta de Desarrollador Apple (Apple Developer Program): <strong>99 USD/año</strong>.</li>
+                                <li style="margin-bottom: 5px;">• Cuenta de Desarrollador Apple (Apple Developer Program): <strong>99 USD/año</strong>.</li>
+                                <li>• Google Play Console (Android): <strong>25 USD</strong> pago único (no incluido en el total recurrente).</li>
                             </ul>
                         </div>
 
@@ -940,6 +1141,10 @@
                                 • Publicación en App Store:&nbsp;
                                 <a href="https://developer.apple.com/programs/enroll/" target="_blank" rel="noopener noreferrer">
                                     Apple Developer Program – 99 USD/año
+                                </a>.<br/><br/>
+                                • Publicación en Google Play:&nbsp;
+                                <a href="https://play.google.com/console/about/" target="_blank" rel="noopener noreferrer">
+                                    Google Play Console – 25 USD pago único
                                 </a>.
                             </p>
                         </div>
@@ -1003,18 +1208,27 @@
                         <span class="price-tag tag-blue">Visión estratégica</span>
                     </div>
                     <p style="color: var(--text-muted); margin-bottom: 12px;">
-                        La inversión estimada para PortalAR, incluyendo desarrollo completo y costos de terceros del
-                        primer año, es de aproximadamente <strong>23,031 USD</strong> sin impuestos, o cerca de
-                        <strong>25,800 USD</strong> con IVA incluido (12%).
+                        La inversión estimada para <strong>PortalAR</strong>, incluyendo desarrollo completo en Unity
+                        (iOS + Android) y costos de terceros del primer año, es de aproximadamente <strong>23,031 USD</strong>
+                        sin impuestos, o cerca de <strong>25,800 USD</strong> con IVA incluido (12%).
                     </p>
                     <p style="color: var(--text-muted); margin-bottom: 12px;">
-                        PortalAR ofrece una forma distinta y moderna de presentar proyectos universitarios,
-                        transformando un espacio físico en una galería en realidad aumentada. Desde el punto de
-                        vista “BI”, la propuesta privilegia indicadores claros (horas, jornadas, tarifas y costos
-                        fijos/variables) por encima de texto, dejando la puerta abierta a incorporar analíticas de
-                        uso y comportamiento en futuras fases.
+                        PortalAR ofrece una forma distinta y moderna de experimentar la realidad aumentada:
+                        el usuario ve su salón a través de la cámara, localiza un portal AR sobre un plano detectado,
+                        lo atraviesa para entrar a un mundo virtual alternativo a escala real 1:1 y puede volver al
+                        mundo real en cualquier momento. Los requerimientos funcionales, de dominio y no funcionales
+                        definen un marco claro de seguridad física, privacidad <em>on-device</em> y rendimiento (FPS,
+                        latencia, estabilidad del portal), reforzado con criterios de aceptación medibles
+                        (CA-01 a CA-06) que cubren estabilidad, cruce natural, retorno fiable, comportamiento en baja
+                        iluminación y recuperación de tracking.
                     </p>
                     <p class="stat-sub">
+                        Desde el punto de vista “BI”, la propuesta privilegia indicadores cuantificables
+                        (horas, jornadas, tarifas, costos fijos/variables y métricas de experiencia) por encima de
+                        texto, dejando la puerta abierta a incorporar analíticas de uso y comportamiento en futuras fases
+                        del producto.
+                    </p>
+                    <p class="stat-sub" style="margin-top: 8px;">
                         Esta propuesta es confidencial y está destinada exclusivamente para evaluación interna del cliente.
                     </p>
                 </div>
